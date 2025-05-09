@@ -1,0 +1,94 @@
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Layout */
+#sidebar {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#mainContent {
+    transition: margin 0.3s ease-in-out;
+}
+
+/* Sidebar State */
+.sidebar-expanded #sidebar {
+    transform: translateX(0);
+}
+
+.sidebar-expanded #mainContent {
+    margin-left: 16rem; /* 64 * 0.25 = 16rem */
+}
+
+@media (min-width: 768px) {
+    .sidebar-collapsed #sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar-collapsed #mainContent {
+        margin-left: 0;
+    }
+    
+    .sidebar-expanded #mainContent {
+        margin-left: 16rem;
+    }
+}
+
+/* Mobile Menu */
+@media (max-width: 767px) {
+    #sidebarToggle {
+        left: 1rem;
+    }
+    
+    .sidebar-expanded #sidebarToggle {
+        left: 17rem; /* 16rem + 1rem */
+    }
+    
+    .sidebar-expanded::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 30;
+    }
+}
+
+/* Content Styling */
+.card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .card {
+    background: #1f2937;
+}
+
+/* Table Styling */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .data-table th, .dark .data-table td {
+    border-bottom-color: #374151;
+}

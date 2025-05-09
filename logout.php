@@ -23,6 +23,6 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 // Redirect ke halaman login
-header("Location: auth/login.php"); // Path relatif
+header("Location: index.php"); // Path relatif
 exit();
 ?>

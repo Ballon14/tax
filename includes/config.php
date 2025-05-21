@@ -1,6 +1,6 @@
 <?php
 // Konfigurasi database
-define('DB_HOST', '100.127.253.4');
+define('DB_HOST', '100.96.165.28');
 define('DB_USER', 'iqbal'); // Ganti dengan username database Anda
 define('DB_PASS', 'iqbal'); // Ganti dengan password database Anda
 define('DB_NAME', 'tax_system'); // Ganti dengan nama database Anda
